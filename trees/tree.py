@@ -1,3 +1,4 @@
+
 class Node:
   def __init__(self, data) :
     self.data = data
@@ -35,44 +36,29 @@ class BynaryTree:
       self.simetric_traversal(node.right)
       print(')', end='')
 
-    
+# Este método olhar primeiro para os nós da esquerda, direita e por ultimo olha pra si
+  def postorder_traversal(self, node=None):
+    if node is None:
+      node = self.root
+    if node.left:
+      self.postorder_traversal(node.left)
+    if node.right:
+      self.postorder_traversal(node.right)
 
-  
-if __name__ == "__main__":
-    tree = BynaryTree()
-    n1 = Node('a')
-    n2 = Node('+')
-    n3 = Node('*')
-    n4 = Node('b')
-    n5 = Node('-')
-    n6 = Node('/')
-    n7 = Node('c')
-    n8 = Node('d')
-    n9 = Node('e')
+    print(node.data)
 
-    n6.left = n7
-    n6.right = n8
-    n5.left = n6
-    n5.right = n9
-    n3.left = n4
-    n3.right = n5
-    n2.left = n1
-    n2.right = n3
-    
-    tree.root = n2
-    tree.simetric_traversal()
+  def height(self, node=None):
+    if node is None:
+        node = self.root
 
+    hleft = 0
+    hright = 0
 
-    # print()
+    if node.left:
+        hleft = self.height(node.left)
+    if node.right:
+        hright = self.height(node.right)
+    if hright > hleft:
+      return hright + 1
+    return hleft + 1
 
-    #      '+'
-    #    /     \
-    #  'a'      '*'
-    #          /   \
-    #        'b'    '-'
-    #              /    \
-    #            '/'    'e' 
-    #           /   \
-    #         'c'   'd'
-
-    # (a + (b * ((c/d) - e)))
