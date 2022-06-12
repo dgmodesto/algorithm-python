@@ -1,8 +1,10 @@
-from trees.tree import Node
 
 # insert in stack
 # remove from stack
 #to see on the top of stack
+from stacks.node import Node
+
+
 class Stack:
   def __init__(self):
     self.top = None
@@ -39,7 +41,7 @@ class Stack:
     pointer = self.top
     while(pointer):
       r = r + str(pointer.data) + "\n"
-      pointer = pointer.next
+      pointer = pointer.next  
     return r 
 
   def __str__(self):
