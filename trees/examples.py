@@ -90,3 +90,17 @@ if __name__ == "__main__":
     print("Percurso em pos ordem:")
     tree.postorder_traversal()
     print("Altura da avorve é :", tree.height())
+
+# levelorder_traversal
+
+    #          (61)
+    #       /       \
+    #     (43)       (89)
+    #    /   \      /  
+    #  (16)  (51)  (66)
+    # /    \      \    \
+#    (11)  (32)   (55)  (79)
+    #                   /    \
+    #                 (77)   (82)
+
+#OUTPUT: 61 43 89 16 51 66 11 32 55 79 77 82
