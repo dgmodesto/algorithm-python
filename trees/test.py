@@ -20,11 +20,23 @@ def example_tree():
 
 
 bst = example_tree()
-bst.inorder_traversal()
-
-
-print('-----------------------------')
 bst.levelorder_traversal()
+
+
+# testar remoção da árvore
+print('-----------------------------')
+value = 100
+print("Remover valor : " + str(value))
+bst.remove(value)
+print("Apos Remover {}".format(value))
+
+print('\n -----------------------------')
+bst.levelorder_traversal()
+print('\n -----------------------------')
+
+print("Maior valor da avorve é :", bst.max())
+print("Menor valor da avorve é :", bst.min())
+
 
 # print('-----------------------------')
 # items = [1, 3, 981, 510, 1000]
