@@ -25,8 +25,6 @@ if __name__ == '__main__':
         if k == query_name:
             filtered.append(v)
     filtered = filtered[0]      
-    result = round(sum(filtered) / len(filtered), 2)    
-    if(len(str(result)) < 5):
-        print(str(result) + '0')
-    else:
-        print(result)
+    result = round(sum(filtered) / len(filtered), 2)       
+    format_float = "{:.2f}".format(result)
+    print(format_float)
